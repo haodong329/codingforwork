@@ -7,6 +7,7 @@ class GetAllJobs(unittest.TestCase):
         self.ExpectName = ['AutomationTest', 'Get_PythonInfo']
 
     def testGetAllJobs(self):
+        #构建获取请求，添加鉴权
         response=requests.get(self.url,auth=('admin','admin'))
         codeResult=response.status_code
         jsonResult=response.json()
