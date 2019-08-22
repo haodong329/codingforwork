@@ -4,7 +4,7 @@ import requests
 class GetAllJobs(unittest.TestCase):
     def setUp(self):
         self.url='http://localhost:8080/api/json?tree=jobs[name]'
-        self.ExpectName = ['AutomationTest', 'Get_PythonInfo']
+        self.ExpectJobsName = ['AutomationTest', 'PythonInfo']
 
     def testGetAllJobs(self):
         #构建获取请求，添加鉴权
@@ -20,7 +20,7 @@ class GetAllJobs(unittest.TestCase):
         if codeResult == 200:
             for i in job:
                 endList.append(i['name'])
-        self.assertEqual(endList,self.ExpectName)
+        self.assertEqual(endList,self.ExpectJobsName)
 
 
     def tearDown(self):
