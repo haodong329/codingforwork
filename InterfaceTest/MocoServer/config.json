@@ -1,0 +1,24 @@
+[
+  {
+    "request":
+    {
+      "uri": "/moco1",
+      "method": "get"
+    },
+    "response":
+    {
+      "file":"get.json"
+    }
+  },
+  {
+    "request":
+    {
+      "uri": "/moco2",
+      "method": "get"
+    },
+    "response":
+    {
+      "file":"get.json"
+    }
+  }
+]
