@@ -1,13 +1,14 @@
 import requests
 import unittest
 
-class CorrentUserPassw(unittest.TestCase):
+#接口说明：输入正确密码和用户名，对登录接口进行通过性验证
+class Login01(unittest.TestCase):
     def setUp(self):
         self.url='http://localhost:/api/mgr/loginReq'
         self.username='auto'
         self.password='sdfsdfsdf'
 
-    def testCorrentUP(self):
+    def test_login01(self):
         data={
             'username':self.username,
             'password':self.password
@@ -21,6 +22,7 @@ class CorrentUserPassw(unittest.TestCase):
         resValue=response.json()
         resHeaders=response.headers
 
+        print('响应数据信息 %s \n响应请求头信息%s' % (response.json(), response.headers))
         #1.判断状态码
         self.assertEqual(response.status_code,200)
         #2.断言响应数据
@@ -30,10 +32,6 @@ class CorrentUserPassw(unittest.TestCase):
             if key=='Content-Type':
                 self.assertEqual(resHeaders[key],"application/json")
             # print(key+":"+resHeaders[key])
-
-
-        # print(response.cookies)
-
 
     def tearDown(self):
         print("本次接口测试结束！！！")
