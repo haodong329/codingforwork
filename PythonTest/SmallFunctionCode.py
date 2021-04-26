@@ -16,6 +16,19 @@ class SmallFunctionCode:
         print("反转后数据：")
         print(end)
 
+
+    def test1(self):
+        dic = {
+            "age": '11',
+            "name": "haodong"
+        }
+        for i in dic:
+            print(i)
+        for j,h in dic.items():
+            print(j)
+            print(h)
+
+
 if __name__=="__main__":
-    SFC=SmallFunctionCode()
-    SFC.reversal()
+    s=SmallFunctionCode()
+    s.test1()
