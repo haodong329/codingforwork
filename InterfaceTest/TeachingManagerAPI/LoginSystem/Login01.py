@@ -4,7 +4,7 @@ import unittest
 #接口说明：输入正确密码和用户名，对登录接口进行通过性验证
 class Login01(unittest.TestCase):
     def setUp(self):
-        self.url='http://localhost:/api/mgr/loginReq'
+        self.url = 'http://localhost:/api/mgr/loginReq'
         self.username='auto'
         self.password='sdfsdfsdf'
 
@@ -35,6 +35,7 @@ class Login01(unittest.TestCase):
 
     def tearDown(self):
         print("本次接口测试结束！！！")
+
 
 if __name__=="__mian__":
     unittest.main()

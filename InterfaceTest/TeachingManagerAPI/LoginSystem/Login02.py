@@ -37,5 +37,6 @@ class MyTest(unittest.TestCase):
     def tearDown(self):
         print("本次接口测试结束！！！")
 
+
 if __name__=="__mian__":
     unittest.main()
