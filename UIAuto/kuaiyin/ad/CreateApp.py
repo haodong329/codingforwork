@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.common import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver.chrome.service import Service
@@ -32,7 +33,7 @@ for i in apps:
 while 1:
     if driver.find_element(By.XPATH,'''//*[@class="btn-next"]''').is_enabled():
         driver.find_element(By.XPATH, '//*[@class="btn-next"]').click()
-        time.sleep(10) #需要添加一个等待时间，翻页有一个加载时间
+        time.sleep(1) #需要添加一个等待时间，翻页有一个加载时间
         apps = driver.find_elements(By.XPATH, "//*[@class='el-table_1_column_1 is-center  el-table__cell']")
         if apps:
             for i in apps:
@@ -55,16 +56,11 @@ driver.find_element(By.XPATH,'//*[@class="el-form-item__content"]/button').click
 driver.find_element(By.XPATH,'//*[@id="app"]/section/section/main/div/div[2]/div/div/div[2]/form/div[1]/div/div/input').send_keys('UI自动化测试建立')
 driver.find_element(By.XPATH,'//*[@id="app"]/section/section/main/div/div[2]/div/div/div[2]/form/div[2]/div/div/input').send_keys(app_id)
 driver.find_element(By.XPATH,'//*[@id="app"]/section/section/main/div/div[2]/div/div/div[2]/form/div[3]/div/div/div/div/input').click()
-time.sleep(5)
-driver.find_element(By.XPATH,'//*[@id="el-popper-4476"]/div[1]/div/div[1]/ul/li[2]/span').click()
+driver.find_element(By.XPATH,"//div[@data-popper-placement='bottom-start']/div/div/div/ul/li[2]").click()
 driver.find_element(By.XPATH,'//*[@id="app"]/section/section/main/div/div[2]/div/div/div[2]/form/div[4]/div/div[1]/input').send_keys('com.test.cn')
 driver.find_element(By.XPATH,'//*[@id="app"]/section/section/main/div/div[2]/div/div/div[3]/div/button[2]/span').click()
 
-
-
-
-time.sleep(60)
-
+# time.sleep(30)
 
 # # 定位元素
 # def find_element(timeout=20,poll_frequency=0.5,**kwargs):
@@ -89,5 +85,3 @@ def find_element2(self, timeout=10, poll_frequency=0.5, **kwargs):
     except TimeoutException as e:
         self.logger.info("元素定位失败：%s" % e)
         raise Exception('元素定位失败，请检查xpath数据是否正确')
-
-
